@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: MyAppBar(),
       endDrawer: const MyDrawer(),
         bottomNavigationBar: MyBottomBar(),
     );

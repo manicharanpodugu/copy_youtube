@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:youtube/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class MyBottomBar extends StatelessWidget {
   const MyBottomBar({super.key});
@@ -9,22 +11,23 @@ class MyBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-          
+          selectedItemColor: context.accentColor,
+          unselectedItemColor: context.accentColor,
         items: const <BottomNavigationBarItem>[
           
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home,size: 20,),
-            label: 'Home',
+            icon: Icon(Icons.home,size: 20,),
+            label: 'home',
           ),
           BottomNavigationBarItem(
             
-            icon: Icon(CupertinoIcons.app_badge,size: 20,),
+            icon: Icon(Icons.share_arrival_time,size: 20,),
             label: 'shorts',
           ),
           BottomNavigationBarItem(
             
             icon: Icon(CupertinoIcons.add_circled,size: 40,),
-            label: '',
+            label: ' ',
           ),
            BottomNavigationBarItem(
             
