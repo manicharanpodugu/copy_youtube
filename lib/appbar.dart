@@ -1,11 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:youtube/themes.dart';
+import 'package:youtube/pages/my_flutter_app_icons.dart';
+import 'package:youtube/utils/routes.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({super.key});
@@ -17,21 +14,43 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Row(
         children: [
-          Image.asset("assets/images/ytlogo.png", scale: 20),
-          "youtube".text.color(context.accentColor).make(),
-          SizedBox(
-            width: 30,
+          const Icon(
+            MyIcons.youtube_1,
+            color: Colors.red,
+            size: 25,
+          ).p1(),
+          const SizedBox(
+            width: 10,
           ),
-          ElevatedButton(
-            onPressed: () => {},
-            child: Icon(CupertinoIcons.search),
-            style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(context.theme.cardColor),
-                shape: MaterialStateProperty.all(
-                  StadiumBorder(),
-                )),
-          ),
+          "youtube"
+              .text
+              .color(context.accentColor)
+              .heightSnug
+              .extraBlack
+              .xl2
+              .make(),
+          const SizedBox().expand(),
+          CupertinoButton(
+              onPressed: (() {
+                Navigator.pushNamed(context, MyRoutes.notifcatonsRoute);
+              }),
+              child: Icon(
+                Icons.notifications_outlined,
+                size: 30,
+                color: context.accentColor,
+              ).badge(
+                color: Colors.redAccent,
+                count: 4,
+              )),
+          CupertinoButton(
+              onPressed: (() {
+                Navigator.pushNamed(context, MyRoutes.searchRoute);
+              }),
+              child: Icon(
+                Icons.search_outlined,
+                size: 30,
+                color: context.accentColor,
+              )),
         ],
       ),
     );

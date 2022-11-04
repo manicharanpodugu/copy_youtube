@@ -2,33 +2,40 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-
 class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
-      primarySwatch: Colors.grey,
-      fontFamily: GoogleFonts.poppins().fontFamily,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      hoverColor: Colors.transparent,
+      fontFamily :GoogleFonts.roboto().fontFamily,
       cardColor: Colors.white,
       canvasColor: lightback,
-      buttonColor: lightbutton,
-      accentColor: Colors.black,
       appBarTheme: AppBarTheme(
         color: Colors.white,
         elevation: 0.0,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
+        // ignore: deprecated_member_use
         textTheme: Theme.of(context).textTheme,
-      ));
+      ),
+      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.grey)
+          .copyWith(secondary: Colors.black)
+          .copyWith(secondary: Colors.black));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
       brightness: Brightness.dark,
       fontFamily: GoogleFonts.poppins().fontFamily,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      hoverColor: Colors.transparent,
       cardColor: Colors.black,
       canvasColor: darkback,
-      buttonColor: darkbutton,
+      // ignore: deprecated_member_use
       accentColor: Colors.white,
       appBarTheme: AppBarTheme(
         color: Colors.black,
         elevation: 0.0,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
+        // ignore: deprecated_member_use
         textTheme: Theme.of(context).textTheme.copyWith(
               headline6:
                   context.textTheme.headline6?.copyWith(color: Colors.white),
@@ -37,9 +44,11 @@ class MyTheme {
 
   //Colors
   static Color lightback = Vx.gray300;
-  static Color darkback = Color.fromARGB(255, 28, 30, 33);
+  static Color darkback = const Color.fromARGB(255, 28, 30, 33);
   static Color darkcolour = Vx.gray600;
   static Color lightcolour = Vx.gray400;
-   static Color lightbutton = Vx.gray700;
-    static Color darkbutton = Vx.gray500;
+  static Color lightbutton = Vx.gray700;
+  static Color darkbutton = Vx.gray500;
+
+  static of(BuildContext context) {}
 }

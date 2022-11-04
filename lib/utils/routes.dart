@@ -5,4 +5,6 @@ class MyRoutes {
   static String subscriptionRoute = "/subscription";
   static String vedioRoute = "/vedio";
   static String downloadsRoute = "/downloads";
+  static String searchRoute = "/search";
+  static String notifcatonsRoute = "/notification";
 }
