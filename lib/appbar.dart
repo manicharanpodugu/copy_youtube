@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:youtube/pages/my_flutter_app_icons.dart';
 import 'package:youtube/utils/routes.dart';
@@ -30,29 +32,39 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
               .xl2
               .make(),
           const SizedBox().expand(),
-          CupertinoButton(
-              onPressed: (() {
-                Navigator.pushNamed(context, MyRoutes.notifcatonsRoute);
-              }),
-              child: Icon(
-                Icons.notifications_outlined,
-                size: 30,
-                color: context.accentColor,
-              ).badge(
-                color: Colors.redAccent,
-                count: 4,
-              )),
-          CupertinoButton(
-              onPressed: (() {
-                Navigator.pushNamed(context, MyRoutes.searchRoute);
-              }),
-              child: Icon(
-                Icons.search_outlined,
-                size: 30,
-                color: context.accentColor,
-              )),
         ],
       ),
+      actions: <Widget>[
+        CupertinoButton(
+            onPressed: (() {
+              Navigator.pushNamed(context, MyRoutes.notifcatonsRoute);
+            }),
+            child: Icon(
+              Icons.notifications_outlined,
+              size: 30,
+              color: context.accentColor,
+            ).badge(
+              color: Colors.redAccent,
+              size: 14,
+            )),
+        CupertinoButton(
+            onPressed: (() {
+              Navigator.pushNamed(context, MyRoutes.searchRoute);
+            }),
+            child: Icon(
+              Icons.search_outlined,
+              size: 30,
+              color: context.accentColor,
+            )),
+        CupertinoButton(
+            onPressed: (() {
+              Navigator.pushNamed(context, MyRoutes.searchRoute);
+            }),
+            child: const CircleAvatar(
+              foregroundImage: NetworkImage(
+                  "https://preview.redd.it/u83c0vcaali31.jpg?auto=webp&s=a71aaa551746325be7ffca80fdcd1c2e47e42856"),
+            )),
+      ],
     );
   }
 }

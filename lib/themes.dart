@@ -13,9 +13,7 @@ class MyTheme {
       appBarTheme: AppBarTheme(
         color: Colors.white,
         elevation: 0.0,
-        iconTheme: const IconThemeData(color: Colors.black),
-        // ignore: deprecated_member_use
-        textTheme: Theme.of(context).textTheme,
+        iconTheme: const IconThemeData(color: Colors.black), toolbarTextStyle: Theme.of(context).textTheme.bodyText2, titleTextStyle: Theme.of(context).textTheme.headline6,
       ),
       colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.grey)
           .copyWith(secondary: Colors.black)
@@ -30,16 +28,17 @@ class MyTheme {
       cardColor: Colors.black,
       canvasColor: darkback,
       // ignore: deprecated_member_use
-      accentColor: Colors.white,
+      hintColor: Colors.white,
       appBarTheme: AppBarTheme(
         color: Colors.black,
         elevation: 0.0,
-        iconTheme: const IconThemeData(color: Colors.white),
-        // ignore: deprecated_member_use
-        textTheme: Theme.of(context).textTheme.copyWith(
+        iconTheme: const IconThemeData(color: Colors.white), toolbarTextStyle: Theme.of(context).textTheme.copyWith(
               headline6:
                   context.textTheme.headline6?.copyWith(color: Colors.white),
-            ),
+            ).bodyText2, titleTextStyle: Theme.of(context).textTheme.copyWith(
+              headline6:
+                  context.textTheme.headline6?.copyWith(color: Colors.white),
+            ).headline6,
       ));
 
   //Colors

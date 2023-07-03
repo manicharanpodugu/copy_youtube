@@ -17,13 +17,13 @@ class MyBottomBar extends StatefulWidget {
 class _MyBottomBarState extends State<MyBottomBar> {
   int pageIndex = 0;
 
-  final pages = [
-    const HomePage(),
-    const ShortsPage(),
-    const DownloadsPage(),
-    const SubscriptionPage(),
-    const LibraryPage(),
-  ];
+  get pages => [
+        const HomePage(),
+        const ShortsPage(),
+        const DownloadsPage(),
+        const SubscriptionPage(),
+        const LibraryPage(),
+      ];
 
   void _onItemTapped(int index) {
     setState(() {

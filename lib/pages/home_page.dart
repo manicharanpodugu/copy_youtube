@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:velocity_x/velocity_x.dart';
 import 'package:youtube/appbar.dart';
 import 'package:youtube/bottumnavigationbar.dart';
 
@@ -11,13 +10,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
-      endDrawer: MyDrawer(),
-      bottomNavigationBar: MyBottomBar(),
+      appBar: const MyAppBar(),
+      endDrawer: const MyDrawer(),
+      bottomNavigationBar: const MyBottomBar(),
       body: SafeArea(
           child: Column(
-        children: [
-          ],
+        children: const [],
       )),
     );
   }
